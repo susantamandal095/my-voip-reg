@@ -1,0 +1,134 @@
+
+
+
+<div class="container orders mt-4">
+  <div class="row">
+  <div class="container col-md-6">
+      <div class="card top p-1">
+        <div class="card-body">
+        <p class="font-weight-bold">
+     Product Orders
+        </p>
+
+      
+    <strong>
+    <div>
+      <canvas baseChart 
+      [data]="pieChartData"
+      [labels]="pieChartLabels" 
+      [chartType]="pieChartType"
+      [options]="pieChartOptions"
+      [plugins]="pieChartPlugins"
+      [colors]="pieChartColors"
+      [legend]="pieChartLegend" 
+      style="width: 500px;">
+    </canvas>
+    </div>
+  </strong>
+    </div>
+  </div>
+  </div>
+
+  
+  <div class="container col-md-6">
+      <div class="card top">
+
+        <div class="card-body">
+          <p class="font-weight-bold"  >
+            Product Status
+          </p>
+ 
+
+      <div class="col">
+        <i class="fa fa-bar-chart" aria-hidden="true"></i><span class="p-2" style="color:skyblue">$225.00</span> 
+
+       <p>Net Sales this month</p> 
+      </div>
+      <div class="col">
+        <i class="fas fa-box" aria-hidden="true"></i> Polycom VVX 500 AC
+      <p> top seller this month(sold it)</p>
+
+      </div>
+
+    
+   
+    <div class="row">
+      <div class="col">
+        <i class="fa fa-truck" aria-hidden="true" style="color:green"></i>    2 orders
+
+       <p>awating processing</p> 
+      </div>
+      <div class="col">
+        <i class="fa fa-minus-circle" aria-hidden="true" style="color:orange"></i> 0 Products
+      <p> low in stock</p>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <i class="fas fa-exclamation-circle" aria-hidden="true" style="color:grey"></i> 1 orders
+
+       <p>on hold</p> 
+      </div>
+      <div class="col">
+        <i class="fa fa-times-circle" aria-hidden="true" style="color:red"></i> 13 Products
+      <p> out of stock</p>
+
+      </div>
+    </div>
+  </div>
+      </div>
+  </div>
+
+
+   <div class="card mt-4 col-md-12 col-sm-3">
+    <div class="card-body">
+      <p class="font-weight-bold"  >
+        Orders
+        </p>
+      <table class="table">
+        <thead class="thead-dark text-center">
+          <tr>
+            <th scope="col">Order</th>
+            <th scope="col">Date</th>
+            <th scope="col">Subscription</th>
+            <th scope="col">Status</th>
+            <th scope="col">Total</th>
+          </tr>
+        </thead>
+        <tbody class="text-center">
+          <tr>
+            <th scope="row">Jody Gonjales</th>
+            <td>Jan8,2020</td>
+            <td>#436</td>
+            <td><button class="btn btn-xs status" style="background-color: #a2e0b3;">Processing</button> </td>
+            <td>$239.91</td>
+          </tr>
+          <tr>
+            <th scope="row">Jody Gonjales</th>
+            <td>Jan8,2020</td>
+            <td>#436</td>
+            <td><button class="btn btn-xs status" style="background-color: #dec840;">On hold</button></td>
+            <td>$239.91</td>
+          </tr>
+          <tr>
+            <th scope="row">Jody Gonjales</th>
+            <td>Jan8,2020
+            </td>
+            <td>#436</td>
+            <td><button class="btn btn-xs status" style="background-color: #eb2a2a;">Failed</button></td>
+            <td>$239.91</td>
+          </tr>
+          <tr>
+            <th scope="row">Jody Gonjales</th>
+            <td>Jan8,2020</td>
+            <td>#436</td>
+            <td><button class="btn btn-xs status" style="background-color: #b5b1ac;">Cancelled</button></td>
+            <td>$239.91</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+   </div>
+  </div> 
+</div>

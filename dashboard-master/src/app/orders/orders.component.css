@@ -1,0 +1,10 @@
+
+.status{
+    height: 40px;
+    width: 150px;
+    padding: 10px 20px 10px 20px;
+    color: black;
+}
+tbody{
+    align-content: center;
+}

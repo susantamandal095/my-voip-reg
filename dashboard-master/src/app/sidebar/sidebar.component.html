@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+ 
+
+</head>
+
+<body>
+
+
+  <div id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+    <i class="fas fa-bars"></i>
+  </div>
+  <nav id="sidebar" class="sidebar-wrapper">
+    <div class="sidebar-content">
+      <div class="sidebar-brand float-right">
+        <div id="close-sidebar">
+          <i class="fas fa-times"></i>
+        </div>
+      </div>
+      <div class="sidebar-header text-center">
+        <div class="user-pic">
+          <a href="#"><img class="img-responsive img-rounded" src="assets/images/favicon.png"
+            alt="Icon">
+            <span>MyVoIp</span>
+          </a>
+        </div>
+      </div>
+      <!-- sidebar-header  -->
+      <div class="sidebar-search">
+        <div>
+          <div class="input-group">
+            <input type="text" class="form-control search-menu" placeholder="Search...">
+            <div class="input-group-append">
+              <span class="input-group-text">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- sidebar-search  -->
+      <div class="sidebar-menu">
+        <ul>
+
+          <li class="sidebar-dropdown">
+            <a href="#">
+              <i class="fa fa-home"></i>
+              <span>Dashboard</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a href="#">Update
+                  </a>
+                </li>
+                <li>
+                  <a href="#">Settings</a>
+                </li>
+                <li>
+                  <a routerLinkActive="active" routerLink="/themeeditor">Theme Editor</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#">
+              <i class="far fa-file-image"></i>
+              <span>Banner Slider</span>
+            </a>
+
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="#">
+              <i class="fa fa-book"></i>
+              <span>Pages</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a routerLinkActive="active" routerLink="/page">All Pages</a>
+                </li>
+                <li>
+                  <a href="#">Add New</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="#">
+              <i class="fa fa-image"></i>
+              <span>Media</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a href="#">Library</a>
+                </li>
+                <li>
+                  <a routerLinkActive="active" routerLink="/site">Add New</a>
+                </li>
+
+              </ul>
+            </div>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="#">
+              <i class="fa fa-shopping-bag"></i>
+              <span>eCommerce</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a routerLinkActive="active" routerLink="/orders">Orders</a>
+                </li>
+                <li>
+                  <a href="#">Coupons</a>
+                </li>
+                <li>
+                    <a href="#">Reports</a>
+                  </li>
+                  <li>
+                    <a href="#">Settings</a>
+                  </li>
+                  <li>
+                    <a href="#">Status</a>
+                  </li>
+              </ul>
+            </div>
+          </li>
+
+          <li>
+            <a href="#">
+              <i class="fa fa-envelope"></i>
+              <span>Email Subscribers</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-user"></i>
+              <span>User Accounts</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-file-alt"></i>
+              <span>Blog</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="far fa-comment-alt"></i>
+              <span>Live Chat</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-sign-out-alt"></i>
+              <span>Logout</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- sidebar-menu  -->
+    </div>
+    <!-- sidebar-content  -->
+
+  </nav>
+  <!-- sidebar-wrapper  -->
+ 
+  <!-- page-content" -->
+<!-- page-wrapper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    
+</body>
+
+</html>

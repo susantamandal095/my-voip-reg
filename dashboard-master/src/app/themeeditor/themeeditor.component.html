@@ -1,0 +1,513 @@
+<div class="card" id="site">
+
+    <button type="button" class="btn btn-success btn-xs m-2 ml-auto"><i class="fa fa-floppy-o"></i> Update </button>
+  
+    <div class="card mt-2">
+  
+    <div class="card-body">
+  
+      <h4>Site Identity</h4>
+      <hr>
+      <h5>Favicon</h5>
+      <p>Favicon is what you see in browser tabs, bookmark bars and within the Wordpress mobile apps. Upload one here!</p>
+      <p>Favicon should be square and at least 64x64pixels.</p>
+  
+      <div class="col-md-4 col-md-offset-4">
+          <div class="main-img-preview">
+            <img class="card img-preview" src="" id="blah">
+            <h6 class="p-2">Preview</h6>
+          </div>
+        </div>
+      <form>
+        <div class="form-group">
+          <label for="title">Site Title</label>
+          <input type="text" class="form-control" id="title" placeholder="Enter your site title">
+        </div>
+        <div class="form-group">
+            <div class="form-group files">
+                <label>Upload Your File </label>
+                <input type="file" id="imgInp" name="logo" class="form-control" multiple="">
+              </div>
+        </div>
+       </form>
+     </div>
+  </div>
+
+  <form #signUpForm="ngForm" (ngSubmit)="signUpForm.valid && onSubmit(signUpForm)">
+    <h6>sitetitle</h6>
+    <div class="col-auto">
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text"><i class="fa fa-paperclip"></i></div>
+        </div>
+      <input type="text" #sitetitle="ngModel" [(ngModel)]="userService.selectedUser.sitetitle" name="sitetitle" placeholder="http://www.facebook.com/myvoip.co"
+          required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !sitetitle.valid }">
+          <div *ngIf="signUpForm.submitted && !sitetitle.valid">
+            <label class="validation-message">This field is required.</label>
+          </div>
+      </div>
+    </div>
+    
+      
+  <h6>Facebook Link</h6>
+  <div class="col-auto">
+    <div class="input-group mb-2">
+      <div class="input-group-prepend">
+        <div class="input-group-text"><i class="fa fa-paperclip"></i></div>
+      </div>
+    <input type="text" #facebooklink="ngModel" [(ngModel)]="userService.selectedUser.facebooklink" name="facebooklink" placeholder="http://www.facebook.com/myvoip.co"
+        required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !facebooklink.valid }">
+        <div *ngIf="signUpForm.submitted && !facebooklink.valid">
+          <label class="validation-message">This field is required.</label>
+        </div>
+    </div>
+  </div>
+  
+  <h6>Twitter Link</h6>
+  <div class="col-auto">
+    <div class="input-group mb-2">
+      <div class="input-group-prepend">
+        <div class="input-group-text"><i class="fa fa-paperclip"></i></div>
+      </div>   
+        <input type="text" #twitterlink="ngModel" [(ngModel)]="userService.selectedUser.twitterlink" name="twitterlink" placeholder="http://www.twitter.com/myvoip1"
+        required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !twitterlink.valid }">
+        <div *ngIf="signUpForm.submitted && !twitterlink.valid">
+          <label class="validation-message">This field is required.</label>
+        </div>
+      </div>
+    </div>
+
+    <h6>Youtube Link</h6>
+    <div class="col-auto">
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text"><i class="fa fa-paperclip"></i></div>
+        </div>
+        <input type="text" #youtubelink="ngModel" [(ngModel)]="userService.selectedUser.youtubelink" name="youtubelink" placeholder="http://www.youtube.com"
+        required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !youtubelink.valid }">
+        <div *ngIf="signUpForm.submitted && !youtubelink.valid">
+          <label class="validation-message">This field is required.</label>
+        </div>
+      </div>
+    </div>
+    <h4 class="headings">Contact Options</h4>
+    <hr>
+    
+    <h6>Address</h6>
+    <div class="col-auto">
+    <div class="input-group mb-2">
+    <div class="input-group-prepend">
+      <div class="input-group-text"><i class="fa fa-map-marker-alt"  aria-hidden="true"></i></div>
+    </div>
+    <input type="text" #address="ngModel" [(ngModel)]="userService.selectedUser.address" name="address" placeholder="1280 Wall St W Suite 308C Lyndhurst, NJ 07071"
+    required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !address.valid }">
+    <div *ngIf="signUpForm.submitted && !address.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+    </div>
+    </div>
+    <h6>Opening Hours</h6>
+<div class="col-auto">
+<div class="input-group mb-2">
+<div class="input-group-prepend">
+  <div class="input-group-text"><i class="fa fa-clock"></i></div>
+</div>
+    <input type="text" #openinghours="ngModel" [(ngModel)]="userService.selectedUser.openinghours" name="openinghours" placeholder="openinghours"
+    required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !openinghours.valid }">
+    <div *ngIf="signUpForm.submitted && !openinghours.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+</div>
+</div>
+<h6>Phone</h6>
+<div class="col-auto">
+<div class="input-group mb-2">
+<div class="input-group-prepend">
+  <div class="input-group-text"><i class="fa fa-phone"></i></div>
+</div>
+    <input type="text" #phone="ngModel" [(ngModel)]="userService.selectedUser.phone" name="phone" placeholder="phone"
+    required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !phone.valid }">
+    <div *ngIf="signUpForm.submitted && !phone.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+</div>
+</div>
+
+<h6>Email</h6>
+<div class="col-auto">
+<div class="input-group mb-2">
+<div class="input-group-prepend">
+  <div class="input-group-text"><i class="fa fa-envelope"></i></div>
+</div>
+
+<div class="col-sm-10 ml-auto">
+  <input type="text" #email="ngModel" [(ngModel)]="userService.selectedUser.email" name="email" placeholder="Voicemail to Email with Transcription"
+  required [pattern]="emailRegex"  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !email.valid }">
+  <div *ngIf="signUpForm.submitted && email.errors">
+    <label *ngIf="email.errors.required" class="validation-message">This field is required.</label>
+    <label *ngIf="email.errors.pattern" class="validation-message">Invalid email address.</label>
+  </div>
+    </div>
+</div>
+
+<h6>googlemapurl</h6>
+<div class="col-auto">
+<div class="input-group mb-2">
+<div class="input-group-prepend">
+  <div class="input-group-text"><i class="fa fa-envelope"></i></div>
+</div>
+
+
+    <input type="text" #googlemapurl="ngModel" [(ngModel)]="userService.selectedUser.googlemapurl" name="googlemapurl" placeholder="googlemapurl"
+    required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !googlemapurl.valid }">
+    <div *ngIf="signUpForm.submitted && !googlemapurl.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+    </div>
+</div>
+  
+<h4 class="headings">MyVoIp Plans & Pricing</h4>
+<hr>
+
+  <div class="form-group row">
+    <label for="pname" class="col-sm-2 col-form-label">Plans Name</label>
+    <div class="col-sm-10">
+  
+  
+    <input type="text" #firstplansname="ngModel" [(ngModel)]="userService.selectedUser.firstplansname" name="firstplansname" placeholder="ULTIMATE"
+    required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !firstplansname.valid }">
+    <div *ngIf="signUpForm.submitted && !firstplansname.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="pprice" class="col-sm-2 col-form-label">Plans Price</label>
+    <div class="col-sm-5">
+    <input type="text" #firstplansprice="ngModel" [(ngModel)]="userService.selectedUser.firstplansprice" name="firstplansprice" placeholder="Regular price: $59.99"
+    required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !firstplansprice.valid }">
+    <div *ngIf="signUpForm.submitted && !firstplansprice.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+    </div>
+    <div class="col-sm-5">
+    <input type="text" #firstregularprice="ngModel" [(ngModel)]="userService.selectedUser.firstregularprice" name="firstregularprice" placeholder="Sale price: $49.99"
+    required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !firstregularprice.valid }">
+    <div *ngIf="signUpForm.submitted && !firstregularprice.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="buy" class="col-sm-2 col-form-label">Buy now URL</label>
+    <div class="col-sm-10">
+    <input type="text" #firstsaleprice="ngModel" [(ngModel)]="userService.selectedUser.firstsaleprice" name="firstsaleprice" placeholder="www."
+    required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !firstsaleprice.valid }">
+    <div *ngIf="signUpForm.submitted && !firstsaleprice.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="trial" class="col-sm-2 col-form-label">Free trial URL</label>
+    <div class="col-sm-10">
+    <input type="text" #firstbuynowurl="ngModel" [(ngModel)]="userService.selectedUser.firstbuynowurl" name="firstbuynowurl" placeholder="www."
+    required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !firstbuynowurl.valid }">
+    <div *ngIf="signUpForm.submitted && !firstbuynowurl.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+    </div>
+  </div>
+
+
+  <div class="form-group row">
+    <label for="feature" class="col-sm-2 col-form-label">Plans Feature</label>
+    <div class="col-sm-10">
+    <input type="text" #firstplansfeatures="ngModel" [(ngModel)]="userService.selectedUser.firstplansfeatures" name="firstplansfeatures" placeholder="Put on all -- Unlimited phone calls within the US and CA, Puerto Rico"
+    required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !firstplansfeatures.valid }">
+    <div *ngIf="signUpForm.submitted && !firstplansfeatures.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+    </div>
+    
+    <div class="col-sm-10 ml-auto">
+    <input type="text" #firstphone="ngModel" [(ngModel)]="userService.selectedUser.firstphone" name="firstphone" placeholder="Toll-free or local number"
+    required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !firstphone.valid }">
+    <div *ngIf="signUpForm.submitted && !firstphone.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+    </div>
+    <div class="col-sm-10 ml-auto">
+      <input type="text" #firstemail="ngModel" [(ngModel)]="userService.selectedUser.firstemail" name="firstemail" placeholder="Email"
+      required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !firstemail.valid }">
+      <div *ngIf="signUpForm.submitted && !firstemail.valid">
+        <label class="validation-message">This field is required.</label>
+      </div>
+      </div>
+  </div>
+
+  
+  
+    <div class="form-group row">
+      <label for="pname" class="col-sm-2 col-form-label">Plans Name</label>
+      <div class="col-sm-10">
+  
+    <input type="text" #secondplansname="ngModel" [(ngModel)]="userService.selectedUser.secondplansname" name="secondplansname" placeholder="ULTIMATE"
+    required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !secondplansname.valid }">
+    <div *ngIf="signUpForm.submitted && !secondplansname.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="pprice" class="col-sm-2 col-form-label">Plans Price</label>
+      <div class="col-sm-5">
+    <input type="text" #secondplansprice="ngModel" [(ngModel)]="userService.selectedUser.secondplansprice" name="secondplansprice" placeholder="Regular price: $59.99"
+    required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !secondplansprice.valid }">
+    <div *ngIf="signUpForm.submitted && !secondplansprice.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+      </div>
+      <div class="col-sm-5">
+    <input type="text" #secondregularprice="ngModel" [(ngModel)]="userService.selectedUser.secondregularprice" name="secondregularprice" placeholder="Sale price: $49.99"
+    required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !secondregularprice.valid }">
+    <div *ngIf="signUpForm.submitted && !secondregularprice.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="trial" class="col-sm-2 col-form-label">Free trial URL</label>
+      <div class="col-sm-10">
+    <input type="text" #secondsaleprice="ngModel" [(ngModel)]="userService.selectedUser.secondsaleprice" name="secondsaleprice" placeholder="www."
+    required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !secondsaleprice.valid }">
+    <div *ngIf="signUpForm.submitted && !secondsaleprice.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+  </div>
+</div>
+
+    <div class="form-group row">
+      <label for="buy" class="col-sm-2 col-form-label">Buy now URL</label>
+      <div class="col-sm-10">
+    <input type="text" #secondbuynowurl="ngModel" [(ngModel)]="userService.selectedUser.secondbuynowurl" name="secondbuynowurl" placeholder="www."
+    required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !secondbuynowurl.valid }">
+    <div *ngIf="signUpForm.submitted && !secondbuynowurl.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+      </div>
+    </div>
+    
+    <div class="form-group row">
+      <label for="feature" class="col-sm-2 col-form-label">Plans Feature</label>
+      <div class="col-sm-10">
+    <input type="text" #secondplansfeatures="ngModel" [(ngModel)]="userService.selectedUser.secondplansfeatures" name="secondplansfeatures" placeholder="Put on all -- Unlimited phone calls within the US and CA, Puerto Rico"
+    required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !secondplansfeatures.valid }">
+    <div *ngIf="signUpForm.submitted && !secondplansfeatures.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+      </div>
+
+      <div class="col-sm-10 ml-auto">
+    <input type="text" #secondphone="ngModel" [(ngModel)]="userService.selectedUser.secondphone" name="secondphone" placeholder="Toll-free or local number"
+    required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !secondphone.valid }">
+    <div *ngIf="signUpForm.submitted && !secondphone.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+      </div>
+      <div class="col-sm-10 ml-auto">
+        <input type="text" #secondemail="ngModel" [(ngModel)]="userService.selectedUser.secondemail" name="secondemail" placeholder="Email"
+        required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !secondemail.valid }">
+        <div *ngIf="signUpForm.submitted && !secondemail.valid">
+          <label class="validation-message">This field is required.</label>
+        </div>
+          </div>
+    </div>
+  
+  
+    <div class="form-group row">
+      <label for="pname" class="col-sm-2 col-form-label">Plans Name</label>
+      <div class="col-sm-10">
+    <input type="text" #threeplansname="ngModel" [(ngModel)]="userService.selectedUser.threeplansname" name="threeplansname" placeholder="ULTIMATE"
+    required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !threeplansname.valid }">
+    <div *ngIf="signUpForm.submitted && !threeplansname.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="pprice" class="col-sm-2 col-form-label">Plans Price</label>
+      <div class="col-sm-5">
+    <input type="text" #threeplansprice="ngModel" [(ngModel)]="userService.selectedUser.threeplansprice" name="threeplansprice" placeholder="Regular price: $59.99"
+    required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !threeplansprice.valid }">
+    <div *ngIf="signUpForm.submitted && !threeplansprice.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+      </div>
+      <div class="col-sm-5">
+    <input type="text" #threeregularprice="ngModel" [(ngModel)]="userService.selectedUser.threeregularprice" name="threeregularprice" placeholder="Sale price: $49.99"
+    required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !threeregularprice.valid }">
+    <div *ngIf="signUpForm.submitted && !threeregularprice.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="buy" class="col-sm-2 col-form-label">Buy now URL</label>
+      <div class="col-sm-10">
+    <input type="text" #threesaleprice="ngModel" [(ngModel)]="userService.selectedUser.threesaleprice" name="threesaleprice" placeholder="www."
+    required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !threesaleprice.valid }">
+    <div *ngIf="signUpForm.submitted && !threesaleprice.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+      </div>
+    </div>
+
+
+    <div class="form-group row">
+      <label for="trial" class="col-sm-2 col-form-label">Free trial URL</label>
+      <div class="col-sm-10">
+    <input type="text" #threebuynowurl="ngModel" [(ngModel)]="userService.selectedUser.threebuynowurl" name="threebuynowurl" placeholder="www."
+    required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !threebuynowurl.valid }">
+    <div *ngIf="signUpForm.submitted && !threebuynowurl.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="feature" class="col-sm-2 col-form-label">Plans Feature</label>
+      <div class="col-sm-10">
+    <input type="text" #threeplansfeatures="ngModel" [(ngModel)]="userService.selectedUser.threeplansfeatures" name="threeplansfeatures" placeholder="Put on all -- Unlimited phone calls within the US and CA, Puerto Rico"
+    required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !threeplansfeatures.valid }">
+    <div *ngIf="signUpForm.submitted && !threeplansfeatures.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+      </div>
+
+      <div class="col-sm-10 ml-auto">
+    <input type="text" #threephone="ngModel" [(ngModel)]="userService.selectedUser.threephone" name="threephone" placeholder="Toll-free or local number"
+    required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !threephone.valid }">
+    <div *ngIf="signUpForm.submitted && !threephone.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+      </div>
+  
+      <div class="col-sm-10 ml-auto">
+        <input type="text" #threeemail="ngModel" [(ngModel)]="userService.selectedUser.threeemail" name="threeemail" placeholder="Email"
+        required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !threeemail.valid }">
+        <div *ngIf="signUpForm.submitted && !threeemail.valid">
+          <label class="validation-message">This field is required.</label>
+        </div>
+          </div>
+     
+    </div>
+  
+  
+
+    <div class="form-group row">
+      <label for="pname" class="col-sm-2 col-form-label">Plans Name</label>
+      <div class="col-sm-10">
+    <input type="text" #fourplansname="ngModel" [(ngModel)]="userService.selectedUser.fourplansname" name="fourplansname" placeholder="ULTIMATE"
+    required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !fourplansname.valid }">
+    <div *ngIf="signUpForm.submitted && !fourplansname.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="pprice" class="col-sm-2 col-form-label">Plans Price</label>
+      <div class="col-sm-5">
+    <input type="text" #fourplansprice="ngModel" [(ngModel)]="userService.selectedUser.fourplansprice" name="fourplansprice" placeholder="Regular price: $59.99"
+    required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !fourplansprice.valid }">
+    <div *ngIf="signUpForm.submitted && !fourplansprice.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+    </div>
+
+
+    <div class="col-sm-5">
+    <input type="text" #fourregularprice="ngModel" [(ngModel)]="userService.selectedUser.fourregularprice" name="fourregularprice" placeholder="Sale price: $49.99"
+    required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !fourregularprice.valid }">
+    <div *ngIf="signUpForm.submitted && !fourregularprice.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+    </div>
+    </div>
+
+
+    <div class="form-group row">
+      <label for="buy" class="col-sm-2 col-form-label">Buy now URL</label>
+      <div class="col-sm-10">
+    <input type="text" #foursaleprice="ngModel" [(ngModel)]="userService.selectedUser.foursaleprice" name="foursaleprice" placeholder="www."
+    required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !foursaleprice.valid }">
+    <div *ngIf="signUpForm.submitted && !foursaleprice.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+      </div>
+    </div>
+
+
+
+    <div class="form-group row">
+      <label for="trial" class="col-sm-2 col-form-label">Free trial URL</label>
+      <div class="col-sm-10">
+    <input type="text" #fourbuynowurl="ngModel" [(ngModel)]="userService.selectedUser.fourbuynowurl" name="fourbuynowurl" placeholder="www."
+    required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !fourbuynowurl.valid }">
+    <div *ngIf="signUpForm.submitted && !fourbuynowurl.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="feature" class="col-sm-2 col-form-label">Plans Feature</label>
+      <div class="col-sm-10">
+    <input type="text" #fourplansfeatures="ngModel" [(ngModel)]="userService.selectedUser.fourplansfeatures" name="fourplansfeatures" placeholder="Put on all -- Unlimited phone calls within the US and CA, Puerto Rico"
+    required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !fourplansfeatures.valid }">
+    <div *ngIf="signUpForm.submitted && !fourplansfeatures.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+      </div>
+      <div class="col-sm-10 ml-auto">
+    <input type="text" #fourphone="ngModel" [(ngModel)]="userService.selectedUser.fourphone" name="fourphone" placeholder="Toll-free or local number"
+    required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !fourphone.valid }">
+    <div *ngIf="signUpForm.submitted && !fourphone.valid">
+      <label class="validation-message">This field is required.</label>
+    </div>
+      </div>
+      <div class="col-sm-10 ml-auto">
+        <input type="text" #fouremail="ngModel" [(ngModel)]="userService.selectedUser.fouremail" name="fouremail" placeholder="Email"
+        required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !fouremail.valid }">
+        <div *ngIf="signUpForm.submitted && !fouremail.valid">
+          <label class="validation-message">This field is required.</label>
+        </div>
+      </div>
+     
+    </div>
+</div>
+
+  
+  
+  
+  
+  
+    <input type="submit" value="Sign Up">
+  </form>
+  
+  <!-- Success message -->
+  <div class="success" *ngIf="showSucessMessage">
+    Saved successfully
+  </div>
+  
+  <!-- Error message -->
+  <div class="alert" *ngIf="serverErrorMessages">
+    {{serverErrorMessages}}
+  </div>
+</div>
+  
+  
