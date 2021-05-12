@@ -23,7 +23,7 @@
     "@syncfusion/ej2-angular-charts": "^17.4.49",
     "@types/jquery": "^2.0.47",
     "angular-highcharts": "^9.0.2",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "highcharts": "^8.0.0",
     "jquery": "^3.4.1",
     "ng2-charts": "^2.3.0",
